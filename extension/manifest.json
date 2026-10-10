@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Splitter",
+  "version": "1.0",
+  "description": "B2B Procurement Search Interceptor. Finds your parts on your preferred accounts.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.google.com/*",
+    "*://*.amazon.com/*",
+    "*://*.supplyhouse.com/*",
+    "*://*.ferguson.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/search*"],
+      "css": ["content.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Splitter Settings"
+  }
+}

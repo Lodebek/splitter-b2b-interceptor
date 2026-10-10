@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Splitter Settings</title>
+    <style>
+        body { width: 320px; padding: 16px; font-family: Arial, sans-serif; color: #333; }
+        h2 { margin-top: 0; color: #1a73e8; font-size: 18px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+        .section { margin-bottom: 16px; }
+        .supplier-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; font-size: 14px;}
+        .supplier-name { font-weight: bold; }
+        .btn { background: #1a73e8; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; }
+        .btn:hover { background: #1557b0; }
+        .btn-danger { background: #d93025; padding: 4px 8px; font-size: 11px; }
+        .btn-danger:hover { background: #b31412; }
+        input[type="text"] { width: 100%; padding: 8px; margin-bottom: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;}
+        .info { font-size: 12px; color: #666; background: #f5f5f5; padding: 10px; border-radius: 4px; margin-top: 10px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <h2>⚡ Splitter Settings</h2>
+    
+    <div class="section">
+        <strong>Active Suppliers:</strong>
+        <div id="supplierList" style="margin-top: 8px;"></div>
+    </div>
+
+    <div class="section" style="background: #e8f0fe; padding: 12px; border-radius: 6px; border: 1px solid #d2e3fc;">
+        <strong>Add Custom Supplier</strong>
+        <p style="font-size: 12px; margin: 4px 0 12px; color: #5f6368;">To add a regional supplier, do a search on their site, then open this popup.</p>
+        <button id="detectBtn" class="btn" style="width: 100%;">Add Current Site</button>
+        
+        <div id="addForm" style="display: none; margin-top: 10px;">
+            <input type="text" id="storeName" placeholder="Store Name (e.g. Bob's Plumbing)">
+            <input type="text" id="searchTerm" placeholder="What part did you just search for?">
+            <button id="saveSupplierBtn" class="btn" style="width: 100%; background: #188038;">Save Supplier</button>
+        </div>
+    </div>
+
+    <div class="info">
+        Splitter dynamically parses Schema.org JSON-LD to extract prices. It works universally on 95% of modern e-commerce sites without custom code.
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
